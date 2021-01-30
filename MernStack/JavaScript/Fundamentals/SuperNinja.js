@@ -14,12 +14,22 @@ class Ninja {
         console.log(this.name ,this.strength , this.speed,this.health );
     }
     drinkSake(){
-        console.log(this.health+=10);
+        console.log(this.health+10);
     }
-
+    
 
 }
-var x = new Ninja("Mahmoud",90);
-x.sayName();
-x.showStats();
-x.drinkSake();
+class Sensei extends Ninja{
+    constructor(name , wisdom){
+        super(name,200,10,10);
+        this.wisdom=10;
+    }
+
+    speakWisdom(){
+        super.drinkSake();
+    }
+    
+}
+const superSensei = new Sensei("Master Splinter");
+superSensei.speakWisdom();
+superSensei.showStats();
